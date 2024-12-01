@@ -8,7 +8,7 @@ from modules import Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7, Day_8, Day_
 DAY_MODULES = {'1': Day_1}
 
 # Main title of the app
-st.title("Welcome to my Advent of Code 2024 web app")
+st.title("Advent of Code 2024 Solver")
 
 # Sidebar menu
 st.sidebar.title("Menu")
@@ -22,7 +22,7 @@ if option == "Homepage":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
     st.image(img, use_column_width=True)
-    st.write("This web app aims to share my Python code used to solve AoC puzzles.")
+    st.write("This web app aims to share my Python code I used to solve AoC puzzles.")
     st.write(
         "You can drop your inputs and run my code to check whether your solution is correct.")
     st.write("Select a puzzle from the menu to begin.")
@@ -54,7 +54,7 @@ else:
         input_data = st.text_area("", placeholder="Enter your input data...")
 
     # Button to run the puzzle solution
-    if input_data and st.button(f"Run Day {day} code"):
+    if input_data and st.button(f"Run code"):
         with st.spinner("Running your puzzle solution..."):
             try:
                 start = time()
