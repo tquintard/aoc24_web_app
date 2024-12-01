@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image  # Required for handling images
 
 # Main title of the app
 st.title("Welcome to my Advent of Code 2024 web app")
@@ -12,6 +13,9 @@ option = st.sidebar.selectbox(
 
 # Homepage section
 if option == "Homepage":
+    # Display an image on the homepage
+    img = Image.open("resources/pictures/aoc2024.png")
+    st.image(img, use_column_width=True)
     st.write("This web app aims to share my Python code used to solve AoC puzzles.")
     st.write(
         "You can drop your inputs and run my code to check whether your solution is correct.")
