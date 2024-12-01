@@ -17,3 +17,20 @@ else:
     # Uploader un fichier
     uploaded_file = st.file_uploader(
         f"Upload your input file for {option}", type=["txt", "csv"])
+
+    if uploaded_file is not None:
+        # Reading the uploaded file content
+        data = uploaded_file.read().decode("utf-8")
+        st.text("Your uploaded file:")
+        st.write(data)
+
+        # Button to run the puzzle solution
+        if st.button("Run Day 1 code"):
+            with st.spinner("Running your puzzle solution..."):
+                try:
+                    # Example solution: Replace this with your actual Day 1 logic
+                    # Example: count the number of lines
+                    solution = len(data.splitlines())
+                    st.success(f"Your solution: {solution}")
+                except Exception as e:
+                    st.error(f"An error occurred: {e}")
