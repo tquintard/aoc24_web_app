@@ -3,7 +3,9 @@ from PIL import Image  # Required for handling images
 from functools import partial
 import timeit
 from time import time
-from modules.solvepuzzle import solvepuzzle
+from modules import Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7, Day_8, Day_9, Day_10, Day_11, Day_12, Day_13, Day_14, Day_15, Day_16, Day_17, Day_18, Day_19, Day_20, Day_21, Day_22, Day_23, Day_24, Day_25
+
+DAY_MODULES = {'1': Day_1}
 
 # Main title of the app
 st.title("Welcome to my Advent of Code 2024 web app")
@@ -57,15 +59,16 @@ else:
             try:
                 start = time()
                 # Fetch input data
-                sol = solvepuzzle(day)
+                fct = DAY_MODULES[day].main
+                sol = fct(input_data)
                 elapsed_time = (time() - start)*1000
-                partial_function = partial(solvepuzzle, day=day)
-                if 0 < elapsed_time < 100:
-                    nb_rep = int(min((200 // elapsed_time) - 1, 100))
-                    elapsed_time = f'{int(timeit.timeit(stmt=partial_function, number=nb_rep)*1000/nb_rep) + 1} ms'
-                else:
-                    elapsed_time = f"{int(elapsed_time) + 1} ms"
-                    solution = len(input_data.splitlines())
-                    st.success(f"Your solution for Day {day} are: {solution}")
+                # partial_function = partial(solvepuzzle, day=day)
+                # if 0 < elapsed_time < 100:
+                #     nb_rep = int(min((200 // elapsed_time) - 1, 100))
+                #     elapsed_time = f'{int(timeit.timeit(stmt=partial_function, number=nb_rep)*1000/nb_rep) + 1} ms'
+                # else:
+                #     elapsed_time = f"{int(elapsed_time) + 1} ms"
+                #     solution = len(input_data.splitlines())
+                st.success(f"Your solution for Day {day} are: {sol}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")

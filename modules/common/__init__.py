@@ -57,7 +57,7 @@ def print_log(logger, msg: object) -> None:
     logger.debug(msg)
 
 
-def get_input(day: int, separator: str, sample: bool = False) -> List[str]:
+def parse_input(day: int, separator: str, sample: bool = False) -> List[str]:
     """
     Read input data from a file for a given day of Advent of Code.
 
