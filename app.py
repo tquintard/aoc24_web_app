@@ -8,16 +8,28 @@ st.write("Ultimately, you can drop your inputs and run my code on it to check we
 st.write('-----------------------------------------------')
 
 
-# Entrée utilisateur
-script_name = st.text_input(
-    "Nom du script à exécuter (e.g., script.py)", "example.py")
+st.sidebar.title("Options")
+option = st.sidebar.selectbox("Choisissez une action", [
+                              "Accueil", "Exécuter un script", "Analyser des données"])
 
-# Contenu personnalisé
-if st.button("Exécuter le script"):
-    with st.spinner("Exécution en cours..."):
-        try:
-            # Exemple : contenu d'un script à exécuter (remplacez cette partie selon vos besoins)
-            exec(open(script_name).read())
-            st.success("Le script a été exécuté avec succès !")
-        except Exception as e:
-            st.error(f"Erreur lors de l'exécution : {e}")
+if option == "Accueil":
+    st.write("Bienvenue sur votre site Python interactif.")
+    st.write("Utilisez le menu à gauche pour explorer les fonctionnalités.")
+elif option == "Exécuter un script":
+    script_name = st.text_input(
+        "Entrez le nom du script à exécuter", "example.py")
+    if st.button("Exécuter"):
+        with st.spinner("Exécution en cours..."):
+            try:
+                exec(open(script_name).read())
+                st.success("Script exécuté avec succès.")
+            except Exception as e:
+                st.error(f"Erreur : {e}")
+elif option == "Analyser des données":
+    uploaded_file = st.file_uploader("Chargez un fichier CSV")
+    if uploaded_file is not None:
+        data = pd.read_csv(uploaded_file)
+        st.write(data.head())
+        st.write("Histogramme des colonnes numériques :")
+        data.hist(bins=20)
+        st.pyplot(plt)
