@@ -1,5 +1,9 @@
 import streamlit as st
 from PIL import Image  # Required for handling images
+from functools import partial
+import timeit
+from time import time
+from modules.solvepuzzle import solvepuzzle
 
 # Main title of the app
 st.title("Welcome to my Advent of Code 2024 web app")
@@ -24,7 +28,8 @@ if option == "Homepage":
 # Puzzle Section
 else:
     st.header(option)
-    day = option.split(":")[0]
+    # Recover the day number
+    day = option.split(":")[0].split()[1]
     # Options for input: file upload or text box
     st.subheader("Provide your input data")
     input_method = st.radio(
@@ -37,7 +42,7 @@ else:
 
     if input_method == "Upload a text file":
         # File uploader for input data
-        uploaded_file = st.file_uploader("", type=["txt"])
+        uploaded_file = st.file_uploader("", type=["txt", "csv"])
         if uploaded_file is not None:
             # Read the uploaded file content
             input_data = uploaded_file.read().decode("utf-8")
@@ -47,12 +52,20 @@ else:
         input_data = st.text_area("", placeholder="Enter your input data...")
 
     # Button to run the puzzle solution
-    if input_data and st.button(f"Run {day} code"):
+    if input_data and st.button(f"Run Day {day} code"):
         with st.spinner("Running your puzzle solution..."):
             try:
-                # Example solution: Replace this with your actual Day 1 logic
-                # Example: count the number of lines
-                solution = len(input_data.splitlines())
-                st.success(f"Your solution for {day} are: {solution}")
+                start = time()
+                # Fetch input data
+                sol = solvepuzzle(day)
+                elapsed_time = (time() - start)*1000
+                partial_function = partial(solvepuzzle, day=day)
+                if 0 < elapsed_time < 100:
+                    nb_rep = int(min((200 // elapsed_time) - 1, 100))
+                    elapsed_time = f'{int(timeit.timeit(stmt=partial_function, number=nb_rep)*1000/nb_rep) + 1} ms'
+                else:
+                    elapsed_time = f"{int(elapsed_time) + 1} ms"
+                    solution = len(input_data.splitlines())
+                    st.success(f"Your solution for Day {day} are: {solution}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
