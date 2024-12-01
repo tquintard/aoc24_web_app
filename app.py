@@ -17,10 +17,10 @@ if option == "Homepage":
         "You can drop your inputs and run my code to check whether your solution is correct.")
     st.write("Select a puzzle from the menu to begin.")
 
-# Day 1 puzzle section
-elif option == "Day 1: Historian Hysteria":
-    st.header("Day 1: Historian Hysteria")
-
+# Puzzle Section
+else:
+    st.header(option)
+    day = option.split(":")[0]
     # Options for input: file upload or text box
     st.subheader("Provide your input data")
     input_method = st.radio(
@@ -43,12 +43,12 @@ elif option == "Day 1: Historian Hysteria":
         input_data = st.text_area("", placeholder="Enter your input data...")
 
     # Button to run the puzzle solution
-    if input_data and st.button("Run Day 1 code"):
+    if input_data and st.button(f"Run {day} code"):
         with st.spinner("Running your puzzle solution..."):
             try:
                 # Example solution: Replace this with your actual Day 1 logic
                 # Example: count the number of lines
                 solution = len(input_data.splitlines())
-                st.success(f"Your solution: {solution}")
+                st.success(f"Your solution for {day} are: {solution}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
