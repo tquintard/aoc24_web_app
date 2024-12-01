@@ -38,16 +38,11 @@ elif option == "Day 1: Historian Hysteria":
         if uploaded_file is not None:
             # Read the uploaded file content
             input_data = uploaded_file.read().decode("utf-8")
-            st.text("Your uploaded file content:")
-            st.write(input_data)
 
     elif input_method == "Paste your input in the text box":
         # Text area for pasting input data
         input_data = st.text_area(
             "Paste your input here", placeholder="Enter your input data...")
-        if input_data:
-            st.text("Your pasted input:")
-            st.write(input_data)
 
     # Button to run the puzzle solution
     if input_data and st.button("Run Day 1 code"):
