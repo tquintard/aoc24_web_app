@@ -14,7 +14,7 @@ option = st.sidebar.selectbox(
 # Homepage section
 if option == "Homepage":
     # Display an image on the homepage
-    img = Image.open("resources/pictures/aoc2024.png")
+    img = Image.open("resources/pictures/aoc24.png")
     st.image(img, use_column_width=True)
     st.write("This web app aims to share my Python code used to solve AoC puzzles.")
     st.write(
