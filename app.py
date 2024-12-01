@@ -69,6 +69,7 @@ else:
                 # else:
                 #     elapsed_time = f"{int(elapsed_time) + 1} ms"
                 #     solution = len(input_data.splitlines())
-                st.success(f"Your solution for Day {day} are: {sol}")
+                st.success(
+                    f"Your solution for Day {day} are:\n Part 1: {sol[0]}\n Part 2: {sol[1]}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
