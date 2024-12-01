@@ -8,9 +8,10 @@ st.write("Ultimately, you can drop your inputs and run my code on it to check we
 st.write('-----------------------------------------------')
 
 
-st.sidebar.title("Options")
-option = st.sidebar.selectbox("Choisissez une action", [
-                              "Accueil", "Exécuter un script", "Analyser des données"])
+st.sidebar.title("Menu")
+option = st.sidebar.selectbox("", ["Homepage",
+                              "Day 1: Historian Hysteria",
+                                   ])
 
 if option == "Accueil":
     st.write("Bienvenue sur votre site Python interactif.")
