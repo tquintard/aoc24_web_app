@@ -12,7 +12,7 @@ st.title("🎄Advent of Code 2024 Solver🎄")
 st.sidebar.title("Menu")
 option = st.sidebar.selectbox(
     "Choose a puzzle",
-    ["Homepage", "Day 1: Historian Hysteria🗺️"]
+    ["🏠Homepage🏠", "🗺️Day 1: Historian Hysteria🗺️"]
 )
 
 # Homepage section
