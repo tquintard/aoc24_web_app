@@ -62,7 +62,7 @@ else:
                 fct = DAY_MODULES[day].main
                 sol = fct(input_data)
                 elapsed_time = (time() - start)*1000
-                partial_function = partial(fct, day=day)
+                partial_function = partial(fct, inputs=input_data)
                 if 0 < elapsed_time < 100:
                     nb_rep = int(min((200 // elapsed_time) - 1, 100))
                     elapsed_time = f'{int(timeit.timeit(stmt=partial_function, number=nb_rep)*1000/nb_rep) + 1} ms'
