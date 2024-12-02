@@ -31,7 +31,7 @@ else:
 
     # Recover the day number
     day = option.split(":")[0].split()[1]
-
+    unsafe_allow_html = True
     # Create tabs for "Solver" and "Code"
     tab1, tab2 = st.tabs([
         f'<span style="font-size:16px;">&#xf1e6; Solver</span>',  # Font Awesome puzzle piece
