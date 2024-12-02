@@ -69,11 +69,11 @@ else:
                 # else:
                 #     elapsed_time = f"{int(elapsed_time) + 1} ms"
                 #     solution = len(input_data.splitlines())
-                st.markdown(st.success(f"""
-                            **Your solution for Day {day} are:**
-                            - **Part 1:** {sol[0]}
-                            - **Part 2:** {sol[1]}
-                            - **Execution time:** xx ms
-                            """))
+                st.success(f"""
+Your solution for Day {day} are:
+- Part 1: {sol[0]}
+- Part 2: {sol[1]}
+- Execution time: xx ms
+""")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
