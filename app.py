@@ -33,7 +33,7 @@ else:
     day = option.split(":")[0].split()[1]
 
     # Create tabs for "Solver" and "Code"
-    tab1, tab2 = st.tabs(["🧩Solver", "📜Code Viewer"])
+    tab1, tab2 = st.tabs(["🧩 Solver", "📜 Code Viewer"])
 
     # Solver Tab
     with tab1:
