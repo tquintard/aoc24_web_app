@@ -6,7 +6,7 @@ from modules import Day_1
 DAY_MODULES = {'1': Day_1}
 
 # Main title of the app
-st.title("🎄🎄Advent of Code 2024 Solver🎄🎄")
+st.title("🎄Advent of Code 2024 Solver🎄")
 
 # Sidebar menu
 st.sidebar.title("Menu")
