@@ -12,11 +12,11 @@ st.title("🎄Advent of Code 2024 Solver🎄")
 st.sidebar.title("Menu")
 option = st.sidebar.selectbox(
     "Choose a puzzle",
-    ["🏠", "Day 1: Historian Hysteria🗺️"]
+    ["Homepage 🏠", "Day 1: Historian Hysteria 🗺️"]
 )
 
 # Homepage section
-if option == "🏠":
+if option == "Homepage 🏠":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
     st.image(img, use_column_width=True)
@@ -33,7 +33,7 @@ else:
     day = option.split(":")[0].split()[1]
 
     # Create tabs for "Solver" and "Code"
-    tab1, tab2 = st.tabs(["🧩Solver", "📜Code Viewer"])
+    tab1, tab2 = st.tabs(["Solver 🧩", "Code Viewer 📜"])
 
     # Solver Tab
     with tab1:
