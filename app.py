@@ -62,18 +62,17 @@ else:
                 fct = DAY_MODULES[day].main
                 sol = fct(input_data)
                 elapsed_time = (time() - start)*1000
-                # partial_function = partial(solvepuzzle, day=day)
-                # if 0 < elapsed_time < 100:
-                #     nb_rep = int(min((200 // elapsed_time) - 1, 100))
-                #     elapsed_time = f'{int(timeit.timeit(stmt=partial_function, number=nb_rep)*1000/nb_rep) + 1} ms'
-                # else:
-                #     elapsed_time = f"{int(elapsed_time) + 1} ms"
-                #     solution = len(input_data.splitlines())
+                partial_function = partial(fct, day=day)
+                if 0 < elapsed_time < 100:
+                    nb_rep = int(min((200 // elapsed_time) - 1, 100))
+                    elapsed_time = f'{int(timeit.timeit(stmt=partial_function, number=nb_rep)*1000/nb_rep) + 1} ms'
+                else:
+                    elapsed_time = f"{int(elapsed_time) + 1} ms"
                 st.success(f"""
-                            Your solution for Day {day} are:
+                            Your solutions for Day {day} are:
                             - Part 1: {sol[0]}
                             - Part 2: {sol[1]}
-                            - Execution time: xx ms
+                            - Execution time: {elapsed_time} ms
                             """)
             except Exception as e:
                 st.error(f"An error occurred: {e}")
