@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image  # Required for handling images
+from PIL import Image
 from time import time
 from modules import Day_1
 
@@ -33,13 +33,13 @@ else:
     day = option.split(":")[0].split()[1]
 
     # Create tabs for "Solver" and "Code"
-    tab1, tab2 = st.tabs(["Solver", "View Code"])
+    tab1, tab2 = st.tabs(["Solver", "Code Viewer"])
 
     # Solver Tab
     with tab1:
         st.subheader("Provide your input data")
         input_method = st.radio(
-            "How would you like to provide your input?",
+            "",
             ("Upload a text file", "Paste your input in the text box")
         )
 
@@ -76,7 +76,6 @@ else:
 
     # View Code Tab
     with tab2:
-        st.subheader(f"Python Code for Day {day}")
         try:
             # Display the content of the corresponding Python module
             with open(f"modules/Day_{day}.py", "r") as f:
