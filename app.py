@@ -6,13 +6,13 @@ from modules import Day_1
 DAY_MODULES = {'1': Day_1}
 
 # Main title of the app
-st.title("Advent of Code 2024 Solver")
+st.title("🎄🎄Advent of Code 2024 Solver🎄🎄")
 
 # Sidebar menu
 st.sidebar.title("Menu")
 option = st.sidebar.selectbox(
     "Choose a puzzle",
-    ["Homepage", "Day 1: Historian Hysteria"]
+    ["Homepage", "Day 1: Historian Hysteria🗺️"]
 )
 
 # Homepage section
@@ -31,12 +31,9 @@ else:
 
     # Recover the day number
     day = option.split(":")[0].split()[1]
-    unsafe_allow_html = True
+
     # Create tabs for "Solver" and "Code"
-    tab1, tab2 = st.tabs([
-        f'<span style="font-size:16px;">&#xf1e6; Solver</span>',  # Font Awesome puzzle piece
-        f'<span style="font-size:16px;">&#xf02d; View Code</span>'  # Font Awesome code
-    ])
+    tab1, tab2 = st.tabs(["🧩Solver", "📜Code Viewer"])
 
     # Solver Tab
     with tab1:
