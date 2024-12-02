@@ -39,7 +39,7 @@ else:
     with tab1:
         st.subheader("Provide your input data")
         input_method = st.radio(
-            "",
+            "Select a method for provding your data:",
             ("Upload a text file", "Paste your input in the text box")
         )
 
