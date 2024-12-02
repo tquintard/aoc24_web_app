@@ -12,11 +12,11 @@ st.title("🎄Advent of Code 2024 Solver🎄")
 st.sidebar.title("Menu")
 option = st.sidebar.selectbox(
     "Choose a puzzle",
-    ["🏠Homepage🏠", "🗺️Day 1: Historian Hysteria🗺️"]
+    ["Homepage🏠", "Day 1: Historian Hysteria🗺️"]
 )
 
 # Homepage section
-if option == "Homepage":
+if option == "Homepage🏠":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
     st.image(img, use_column_width=True)
