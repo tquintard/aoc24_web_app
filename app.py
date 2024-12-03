@@ -1,9 +1,9 @@
 import streamlit as st
 from PIL import Image
 from time import time
-from modules import Day_1
+from modules import Day_1, Day_2
 
-DAY_MODULES = {'1': Day_1}
+DAY_MODULES = {1: Day_1, 2: Day_2, }
 
 # Main title of the app
 st.title("🎄Advent of Code 2024 Solver🎄")
@@ -22,7 +22,7 @@ option = st.sidebar.selectbox(
 if option == "Homepage 🏠":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
-    st.image(img, use_column_width=True)
+    st.image(img, use_container_width=True)
     st.write("This web app aims to share my Python code I used to solve AoC puzzles.")
     st.write(
         "You can drop your inputs and run my code to check whether your solution is correct.")
