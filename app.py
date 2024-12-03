@@ -3,7 +3,7 @@ from PIL import Image
 from time import time
 from modules import Day_1, Day_2
 
-DAY_MODULES = {1: Day_1, 2: Day_2, }
+DAY_MODULES = {"1": Day_1, "2": Day_2, }
 
 # Main title of the app
 st.title("🎄Advent of Code 2024 Solver🎄")
