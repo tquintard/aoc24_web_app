@@ -1,9 +1,9 @@
 import streamlit as st
 from PIL import Image
 from time import time
-from modules import Day_1, Day_2
+from modules import Day_1, Day_2, Day_3
 
-DAY_MODULES = {"1": Day_1, "2": Day_2, }
+DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3}
 
 # Main title of the app
 st.title("🎄Advent of Code 2024 Solver🎄")
@@ -13,8 +13,9 @@ st.sidebar.title("Menu")
 option = st.sidebar.selectbox(
     "Choose a puzzle",
     ["Homepage 🏠",
-     "Day 1: Historian Hysteria 📌",
+     "Day 1: Historian Hysteria 📍",
      "Day 2: Red-Nosed Reports ☢️",
+     "Day 3: Mull It Over 👨‍💻",
      ]
 )
 
