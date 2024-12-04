@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 from time import time
-from modules import Day_1, Day_2, Day_3
+from modules import Day_1, Day_2, Day_3, Day_4
 
 DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3, "4": Day_4}
 
