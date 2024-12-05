@@ -5,11 +5,8 @@ from modules import Day_1, Day_2, Day_3, Day_4
 
 DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3, "4": Day_4}
 
-# Wide mode activated
-st.set_page_config(layout="wide")
-
 #Internet Browser tab name
-st.set_page_config(page_title="Advent of Code 2024 Solver", page_icon="🎄")
+st.set_page_config(page_title="Advent of Code 2024 Solver", page_icon="🎄", layout="wide")
 
 # Main title of the app
 st.title("🎄Advent of Code 2024 Solver🎄")
