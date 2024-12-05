@@ -26,7 +26,7 @@ option = st.sidebar.selectbox(
 if option == "Homepage 🏠":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
-    st.image(img, use_container_width=False,width = 400)
+    st.image(img, use_container_width=False,width = 800)
     st.write("This web app aims to share my Python code I used to solve AoC puzzles.")
     st.write(
         "You can drop your inputs and run my code to check whether your solution is correct.")
