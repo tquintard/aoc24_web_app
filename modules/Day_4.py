@@ -1,5 +1,5 @@
 from typing import Tuple, List
-from .common import create_grid
+from modules.common import create_grid
 
 # Directions to look for neighbors: right, diagonal-down-right, down, diagonal-down-left, left, diagonal-up-left, up, diagonal-up-right
 LOOK_DIR = [(1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, -1), (1, -1)]
