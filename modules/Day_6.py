@@ -1,5 +1,5 @@
 from typing import Tuple
-from common import create_grid
+from modules.common import create_grid
 from collections import defaultdict
 
 
