@@ -22,9 +22,7 @@ def main(inputs: str) -> Tuple[int, int]:
         pages = list(map(int, update.split(",")))
 
         def count_successors(page: int) -> int:
-            """
-            Count the number of successors of the given page present in the update.
-            """
+            # Count the number of successors of the given page present in the update.
             return sum(1 for succ in print_order[page] if succ in pages)
 
         # Sort pages by the number of successors in descending order
