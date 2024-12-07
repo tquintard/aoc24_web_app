@@ -1,12 +1,13 @@
 import streamlit as st
 from PIL import Image
 from time import time
-from modules import Day_1, Day_2, Day_3, Day_4
+from modules import Day_1, Day_2, Day_3, Day_4, Day_5
 
-DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3, "4": Day_4}
+DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3, "4": Day_4, "5": Day_5}
 
-#Internet Browser tab name
-st.set_page_config(page_title="Advent of Code 2024 Solver", page_icon="🎄", layout="wide")
+# Internet Browser tab name
+st.set_page_config(page_title="Advent of Code 2024 Solver",
+                   page_icon="🎄", layout="wide")
 
 # Main title of the app
 st.title("🎄Advent of Code 2024 Solver🎄")
@@ -19,14 +20,15 @@ option = st.sidebar.selectbox(
      "Day 1: Historian Hysteria 📍",
      "Day 2: Red-Nosed Reports ☢️",
      "Day 3: Mull It Over 👨‍💻",
-     "Day 4: Ceres Search 🕵🏻",]
+     "Day 4: Ceres Search 🕵🏻",
+     "Day 5: Print Queue 🖨️",]
 )
 
 # Homepage section
 if option == "Homepage 🏠":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
-    st.image(img, use_container_width=False,width = 800)
+    st.image(img, use_container_width=False, width=800)
     st.write("This web app aims to share my Python code I used to solve AoC puzzles.")
     st.write(
         "You can drop your inputs and run my code to check whether your solution is correct.")
