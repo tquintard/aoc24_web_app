@@ -11,19 +11,6 @@ DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3,
 st.set_page_config(page_title="Advent of Code 2024 Solver",
                    page_icon="🎄", layout="wide")
 
-
-# Sidebar customization with a width of 400 pixels
-st.markdown(
-    """
-    <style>
-        [data-testid="stSidebar"] {
-            max-width: 350px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
 # Main title of the app
 st.title("🎄Advent of Code 2024 Solver🎄")
 
@@ -54,10 +41,10 @@ if option == "Homepage 🏠":
 
 # Puzzle Section
 else:
-    st.header(st.session_state.option)
+    st.header(option)
 
     # Recover the day number
-    day = st.session_state.option.split(":")[0].split()[1]
+    day = option.split(":")[0].split()[1]
 
     # Create tabs for "Solver" and "Code"
     tab1, tab2 = st.tabs(["🧩 Solver", "📜 Code Viewer"])
