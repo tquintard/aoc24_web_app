@@ -54,10 +54,10 @@ if option == "Homepage 🏠":
 
 # Puzzle Section
 else:
-    st.header(option)
+    st.header(st.session_state.option)
 
     # Recover the day number
-    day = option.split(":")[0].split()[1]
+    day = st.session_state.option.split(":")[0].split()[1]
 
     # Create tabs for "Solver" and "Code"
     tab1, tab2 = st.tabs(["🧩 Solver", "📜 Code Viewer"])
