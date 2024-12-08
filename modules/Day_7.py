@@ -38,3 +38,4 @@ def main(inputs: str) -> List[int, int]:
         for part in (1, 2):
             sol[part -
                 1] += result if is_valid_eq(result, operands, part) else 0
+    return sol
