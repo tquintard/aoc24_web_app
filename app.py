@@ -11,17 +11,35 @@ DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3,
 st.set_page_config(page_title="Advent of Code 2024 Solver",
                    page_icon="🎄", layout="wide")
 
+# Set custom sidebar width using CSS
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebar"] {
+            width: 400px;
+            min-width: 400px;
+            max-width: 400px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Main title of the app
 st.title("🎄 Advent of Code 2024 Solver 🎄")
 
 # Sidebar menu
 st.sidebar.title("Menu")
 
+# Set the default view to Homepage
+if "option" not in st.session_state:
+    st.session_state.option = "Homepage"
+
 # Homepage button in the sidebar
 if st.sidebar.button("Homepage 🏠"):
-    option = "Homepage"
+    st.session_state.option = "Homepage"
 else:
-    option = st.sidebar.selectbox(
+    st.session_state.option = st.sidebar.selectbox(
         "Choose a puzzle",
         [
             "Day 1: Historian Hysteria 📍",
@@ -32,11 +50,12 @@ else:
             "Day 6: Guard Gallivant 💂‍♂️",
             "Day 7: Bridge Repair 🚧",
             "Day 8: Resonant Collinearity 📡",
-        ]
+        ],
+        key="selectbox"
     )
 
-# Homepage section
-if option == "Homepage":
+# Render based on selected option
+if st.session_state.option == "Homepage":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
     st.image(img, use_container_width=False, width=800)
@@ -47,10 +66,10 @@ if option == "Homepage":
 
 # Puzzle Section
 else:
-    st.header(option)
+    st.header(st.session_state.option)
 
     # Recover the day number
-    day = option.split(":")[0].split()[1]
+    day = st.session_state.option.split(":")[0].split()[1]
 
     # Create tabs for "Solver" and "Code"
     tab1, tab2 = st.tabs(["🧩 Solver", "📜 Code Viewer"])
