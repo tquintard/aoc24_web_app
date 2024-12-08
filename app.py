@@ -11,32 +11,39 @@ DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3,
 st.set_page_config(page_title="Advent of Code 2024 Solver",
                    page_icon="🎄", layout="wide")
 
+
+# Sidebar customization with a width of 400 pixels
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebar"] {
+            max-width: 300px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Main title of the app
-st.title("🎄 Advent of Code 2024 Solver 🎄")
+st.title("🎄Advent of Code 2024 Solver🎄")
 
 # Sidebar menu
 st.sidebar.title("Menu")
-
-# Homepage button in the sidebar
-if st.sidebar.button("Homepage 🏠"):
-    option = "Homepage"
-else:
-    option = st.sidebar.selectbox(
-        "Choose a puzzle",
-        [
-            "Day 1: Historian Hysteria 📍",
-            "Day 2: Red-Nosed Reports ☢️",
-            "Day 3: Mull It Over 👨‍💻",
-            "Day 4: Ceres Search 🕵🏻",
-            "Day 5: Print Queue 🖨️",
-            "Day 6: Guard Gallivant 💂‍♂️",
-            "Day 7: Bridge Repair 🚧",
-            "Day 8: Resonant Collinearity 📡",
-        ]
-    )
+option = st.sidebar.selectbox(
+    "Choose a puzzle",
+    ["Homepage 🏠",
+     "Day 1: Historian Hysteria 📍",
+     "Day 2: Red-Nosed Reports ☢️",
+     "Day 3: Mull It Over 👨‍💻",
+     "Day 4: Ceres Search 🕵🏻",
+     "Day 5: Print Queue 🖨️",
+     "Day 6: Guard Gallivant 💂‍♂️",
+     "Day 7: Bridge Repair 🚧",
+     "Day 8: Resonant Collinearity 📡",]
+)
 
 # Homepage section
-if option == "Homepage":
+if option == "Homepage 🏠":
     # Display an image on the homepage
     img = Image.open("resources/pictures/aoc24.png")
     st.image(img, use_container_width=False, width=800)
@@ -59,7 +66,7 @@ else:
     with tab1:
         st.subheader("Provide your input data")
         input_method = st.radio(
-            "Select a method for providing your data:",
+            "Select a method for provding your data:",
             ("Upload a text file", "Paste your input in the text box")
         )
 
