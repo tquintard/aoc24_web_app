@@ -2,7 +2,10 @@ from typing import Tuple
 from collections import defaultdict
 from itertools import combinations
 
-
+def pos_in_grid(x, y) -> bool:
+    """ Check if the position (x, y) is within the bounds of the grid """
+    return 0 <= x < nb_col and 0 <= y < nb_row
+        
 def main(inputs: str) -> Tuple[int, int]:
     # Convert input into a grid (list of strings)
     grid = inputs.splitlines()
@@ -11,11 +14,7 @@ def main(inputs: str) -> Tuple[int, int]:
 
     # Using defaultdict to store antennas' positions grouped by their type
     antennas = defaultdict(list)
-
-    def pos_in_grid(x, y) -> bool:
-        """ Check if the position (x, y) is within the bounds of the grid """
-        return 0 <= x < nb_col and 0 <= y < nb_row
-
+    
     # Populate the antennas dictionary with positions of non-empty grid cells
     for y in range(nb_row):
         for x in range(nb_col):
