@@ -42,7 +42,6 @@ def main(inputs: str) -> Tuple[int, int]:
                 while pos_in_grid(*antinode):
                     if count == 1:  # Add the first valid antinode to the set
                         antinodes.add(antinode)
-                    # Add all positions to res_antinodes
                     res_antinodes.add(antinode)
                     # Move to the next position
                     antinode = (antinode[0] + vector[0],
