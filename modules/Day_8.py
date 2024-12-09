@@ -2,7 +2,7 @@ from typing import Tuple
 from collections import defaultdict
 from itertools import combinations
 
-def pos_in_grid(x, y) -> bool:
+def pos_in_grid(x: int, y: int) -> bool:
     """ Check if the position (x, y) is within the bounds of the grid """
     return 0 <= x < nb_col and 0 <= y < nb_row
         
