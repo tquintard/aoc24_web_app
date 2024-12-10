@@ -4,8 +4,8 @@ from typing import Tuple
 def main(input_string: str) -> Tuple[int, int]:
     """Calculate the checksum of a compacted disk and return it.
     """
-    disk = []
-    index = 0
+    disk = list()
+    idx = 0
     checksum = 0
 
     # Precompute values to reduce redundant calculations
@@ -16,17 +16,17 @@ def main(input_string: str) -> Tuple[int, int]:
 
     # Main loop to fill the compacted disk and calculate checksum
     while length_compacted_disk < max_length_compacted_disk:
-        actual_bit = int(input_string[index])
+        actual_bit = int(input_string[idx])
 
         # Handle even indices (direct placement of bits)
-        if index % 2 == 0:
+        if idx % 2 == 0:
             add_length = min(max_length_compacted_disk -
                              length_compacted_disk, actual_bit)
             for _ in range(add_length):
-                checksum += length_compacted_disk * (index // 2)
+                checksum += length_compacted_disk * (idx // 2)
                 length_compacted_disk += 1
-                disk.append(index // 2)
-            index += 1
+                disk.append(idx // 2)
+            idx += 1
 
         # Handle odd indices (fill from the back)
         else:
@@ -48,6 +48,6 @@ def main(input_string: str) -> Tuple[int, int]:
                     current_last_bit_remaining = int(
                         input_string[last_current_id * 2])
 
-            index += 1
+            idx += 1
 
     return checksum, 'Not yet solved'
