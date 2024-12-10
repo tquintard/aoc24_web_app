@@ -1,11 +1,17 @@
 import streamlit as st
 from PIL import Image
 from time import time
-from modules import Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7, Day_8
+from modules import Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7, Day_8, Day_9, Day_10, Day_11, Day_12, Day_13, Day_14, Day_15, Day_16, Day_17, Day_18, Day_19, Day_20, Day_21, Day_22, Day_23, Day_24, Day_25
 
 DAY_MODULES = {"1": Day_1, "2": Day_2, "3": Day_3,
                "4": Day_4, "5": Day_5, "6": Day_6,
-               "7": Day_7, "8": Day_8}
+               "7": Day_7, "8": Day_8, "9": Day_9,
+               "10": Day_10, "11": Day_11, "12": Day_12,
+               "13": Day_13, "14": Day_14, "15": Day_15,
+               "16": Day_16, "17": Day_17, "18": Day_18,
+               "19": Day_19, "20": Day_20, "21": Day_21,
+               "22": Day_22, "23": Day_23, "24": Day_24,
+               "25": Day_25}
 
 # Internet Browser tab name
 st.set_page_config(page_title="Advent of Code 2024 Solver",
@@ -26,7 +32,8 @@ option = st.sidebar.selectbox(
      "Day 5: Print Queue 🖨️",
      "Day 6: Guard Gallivant 💂‍♂️",
      "Day 7: Bridge Repair 🚧",
-     "Day 8: Resonant Collinearity 📡",]
+     "Day 8: Resonant Collinearity 📡",
+     "Day 9: Disk Fragmenter 💽",]
 )
 
 # Homepage section
