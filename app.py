@@ -50,8 +50,6 @@ if option == "Homepage 🏠":
 # Puzzle Section
 elif option == "Common Modules 📚":
     st.header(option)
-    # Solver Tab
-    st.subheader("📜 Code Viewer")
     st.write("Find here the common modules used in the puzzles.")
     # Display the content of the corresponding Python module
     with open(f"modules/common/__init__.py", "r") as f:
