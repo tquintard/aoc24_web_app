@@ -51,7 +51,7 @@ if option == "Homepage 🏠":
 elif option == "Common Modules 📚":
     st.header(option)
     # Create tab "Code"
-    tab = st.tabs(["📜 Code Viewer"])
+    tab, _ = st.tabs(["📜 Code Viewer",])
     # Solver Tab
     with tab:
         st.subheader("Find here common modules used in several puzzles")
