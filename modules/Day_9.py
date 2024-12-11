@@ -25,7 +25,6 @@ def main(input_string: str) -> Tuple[int, int]:
             for _ in range(add_length):
                 checksum += length_compacted_disk * (idx // 2)
                 length_compacted_disk += 1
-                disk.append(idx // 2)
             idx += 1
 
         # Handle odd indices (fill from the back)
@@ -40,7 +39,6 @@ def main(input_string: str) -> Tuple[int, int]:
                     length_compacted_disk += 1
                     free_space_filled += 1
                     current_last_bit_remaining -= 1
-                    disk.append(last_current_id)
 
                 # If the current_last_bit_remaining is exhausted, move to the next
                 if current_last_bit_remaining == 0 and last_current_id > 0:
