@@ -1,5 +1,5 @@
 from typing import Tuple, List
-from modules.common import create_grid
+from modules.common import create_grid, pos_in_grid
 
 # Directions for neighbor look-up: up, right, down, left
 LOOK_DIR = [(0, -1), (1, 0), (0, 1), (-1, 0)]
@@ -29,7 +29,7 @@ def main(inputs: str) -> Tuple[int, int]:
         Handles direction cycling and checks for visited positions.
         Stop once the walk get you out of the grid.
         """
-        while 0 <= x < nb_col and 0 <= y < nb_row:
+        while pos_in_grid(x, y, nb_row, nb_col):
             # If the cell is not blocked
             if grid[y][x] != '#':
                 pos_visited.add((x, y))  # Mark the cell as visited
