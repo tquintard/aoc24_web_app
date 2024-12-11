@@ -6,9 +6,7 @@ from modules.common import pos_in_grid
 
 def main(inputs: str) -> Tuple[int, int]:
     # Convert input into a grid (list of strings)
-    grid = inputs.splitlines()
-    nb_row = len(grid)  # Number of rows in the grid
-    nb_col = len(grid[0])  # Number of columns in the grid
+    grid, nb_row, nb_col = inputs.splitlines()
 
     # Using defaultdict to store antennas' positions grouped by their type
     antennas = defaultdict(list)

@@ -34,6 +34,8 @@ option = st.sidebar.selectbox(
      "Day 7: Bridge Repair 🚧",
      "Day 8: Resonant Collinearity 📡",
      "Day 9: Disk Fragmenter 💽",
+     "Day 10: Hoof It ⛰️",
+     "Day 11: Plutonian Pebbles 🌑",
      "Common Modules 📚",]
 )
 

@@ -1,8 +1,5 @@
 from typing import Tuple, List
-from modules.common import create_grid, pos_in_grid
-
-# Directions for neighbor look-up: up, right, down, left
-LOOK_DIR = [(0, -1), (1, 0), (0, 1), (-1, 0)]
+from modules.common import create_grid, pos_in_grid, next_direction, LOOK_DIR
 
 
 def main(inputs: str) -> Tuple[int, int]:
@@ -16,12 +13,6 @@ def main(inputs: str) -> Tuple[int, int]:
     # Find the starting position (first occurrence of '^')
     start = next((x, y) for y, row in enumerate(grid)
                  for x, col in enumerate(row) if col == '^')
-
-    def next_direction(current_dir: Tuple, directions: List[Tuple]) -> Tuple:
-        """
-        Get the next direction in a cyclic list of directions.
-        """
-        return directions[(directions.index(current_dir) + 1) % len(directions)]
 
     def walk(x: int, y: int, dx_dy: Tuple[int, int]) -> int:
         """
