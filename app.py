@@ -60,7 +60,7 @@ elif option == "Common Modules 📚":
 
 else:
     st.header(option)
-
+    input_data = None
     # Recover the day number
     day = option.split(":")[0].split()[1]
 
