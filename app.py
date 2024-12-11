@@ -33,7 +33,8 @@ option = st.sidebar.selectbox(
      "Day 6: Guard Gallivant 💂‍♂️",
      "Day 7: Bridge Repair 🚧",
      "Day 8: Resonant Collinearity 📡",
-     "Day 9: Disk Fragmenter 💽",]
+     "Day 9: Disk Fragmenter 💽",
+     "Common Modules 📚",]
 )
 
 # Homepage section
@@ -47,6 +48,18 @@ if option == "Homepage 🏠":
     st.write("Select a puzzle from the menu to begin.")
 
 # Puzzle Section
+elif option == "Common Modules 📚":
+    st.header(option)
+    # Create tab "Code"
+    tab = st.tabs(["📜 Code Viewer"])
+    # Solver Tab
+    with tab:
+        st.subheader("Find here common modules used in several puzzles")
+        # Display the content of the corresponding Python module
+        with open(f"modules/common/__init__.py", "r") as f:
+            code = f.read()
+        st.code(code, language="python")
+
 else:
     st.header(option)
 
