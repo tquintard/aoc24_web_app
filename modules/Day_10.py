@@ -1,4 +1,4 @@
-from common import next_position, pos_in_grid, LOOK_DIR
+from modules.common import next_position, pos_in_grid, LOOK_DIR
 from typing import Tuple, Set
 from collections import defaultdict
 
