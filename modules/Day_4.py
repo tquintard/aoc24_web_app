@@ -47,7 +47,7 @@ def main(inputs: str) -> Tuple[int, int]:
     Main function to solve the problem by finding valid positions of the words.
     """
     grid, nb_row, nb_col = create_grid(
-        inputs.splitlines())  # Convert input into a grid
+        inputs.splitlines())  # Convert input into a grid and recover nb row and col
 
     # Find positions for "XMAS" starting with "X"
     sol1_pos = find_words(grid, nb_row, nb_col, "X", "XMAS", FULL_LOOK_DIR)
