@@ -24,3 +24,7 @@ def next_direction(current_dir: Tuple, directions: List[Tuple]) -> Tuple:
     Get the next direction in a cyclic list of directions.
     """
     return directions[(directions.index(current_dir) + 1) % len(directions)]
+
+
+def next_position(pos: Tuple[int, int], dx_dy: Tuple[int, int]) -> Tuple[int, int]:
+    return map(sum, zip(pos, dx_dy))

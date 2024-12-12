@@ -1,5 +1,5 @@
 from typing import Tuple, List
-from modules.common import create_grid, FULL_LOOK_DIR
+from modules.common import create_grid, next_position, pos_in_grid, FULL_LOOK_DIR
 
 
 def find_loc(grid: List[str], char: str) -> List[Tuple[int, int]]:
