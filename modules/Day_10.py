@@ -7,7 +7,7 @@ def main(topo_map: str) -> Tuple[int, int]:
     """
     Analyse the topographic map to calculate:
     - The total number of unique "peak" positions (marked with a 9) reachable from a bottom position.
-    - The total number of time peak are reachable from all bottom position.
+    - The total number of time peak are reachable from all bottom positions.
     """
     grid = []
     zero_positions = defaultdict(int)
