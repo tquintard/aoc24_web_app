@@ -15,9 +15,9 @@ def look_next(act_loc: Tuple[int, int], act_char_idx: int, dx_dy: Tuple[int, int
     """
     Recursively checks if the next character of the word exists in the given direction.
     """
-    x, y = act_loc[0] + dx_dy[0], act_loc[1] + dx_dy[1]
+    x, y = next_position(act_loc, dx_dy)
     # Check if the next position is within bounds and matches the next character
-    if 0 <= x < nb_col and 0 <= y < nb_row and grid[y][x] == word[act_char_idx + 1]:
+    if pos_in_grid(x, y, nb_col, nb_row) and grid[y][x] == word[act_char_idx + 1]:
         locs_ok.append((x, y))  # Append valid position
         if act_char_idx < len(word) - 2:  # Continue checking next characters
             look_next((x, y), act_char_idx + 1, dx_dy,
