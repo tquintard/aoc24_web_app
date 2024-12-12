@@ -1,11 +1,10 @@
 from typing import Tuple, List
-from modules.common import create_grid, pos_in_grid, next_direction, LOOK_DIR
+from modules.common import create_grid, pos_in_grid, next_position, next_direction, LOOK_DIR
 
 
 def main(inputs: str) -> Tuple[int, int]:
     # Create a 2D grid from the input
-    grid = create_grid(inputs.splitlines())
-    nb_row, nb_col = len(grid), len(grid[0])
+    grid, nb_row, nb_col = create_grid(inputs.splitlines())
 
     # Initialize sets to track visited positions and directions
     pos_dir_visited, pos_visited = set(), set()
@@ -36,7 +35,7 @@ def main(inputs: str) -> Tuple[int, int]:
                 dx_dy = next_direction(dx_dy, LOOK_DIR)
 
             # Move to the next position
-            x, y = x + dx_dy[0], y + dx_dy[1]
+            x, y = next_position((x, y), dx_dy)
         return 0
 
     # Part 1: Perform the initial guard walk and record visited positions
