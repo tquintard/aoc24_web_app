@@ -1,5 +1,5 @@
 from typing import Tuple, List
-from modules.common import create_grid, pos_in_grid, get_input, next_position, next_direction, LOOK_DIR
+from modules.common import create_grid, pos_in_grid, next_position, next_direction, LOOK_DIR
 
 
 def main(inputs: str) -> Tuple[int, int]:
